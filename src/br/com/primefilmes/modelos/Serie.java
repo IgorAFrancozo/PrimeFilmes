@@ -1,10 +1,13 @@
 package br.com.primefilmes.modelos;
 
-public class    Serie extends Titulo {
+import br.com.primefilmes.logicas.Classificacao;
+
+public class Serie extends Titulo implements Classificacao {
     private int temporadas;
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
     private boolean ativa;
+    private int avaliacao;
 
     public int getTemporadas() {
         return temporadas;
@@ -36,5 +39,14 @@ public class    Serie extends Titulo {
 
     public void setAtiva(boolean ativa) {
         this.ativa = ativa;
+    }
+
+    @Override
+    public int getAvaliador() {
+        if (avaliacao >= 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }

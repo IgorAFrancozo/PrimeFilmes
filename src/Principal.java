@@ -1,4 +1,5 @@
-import br.com.primefilmes.calculo.CalculadoraDeTempo;
+import br.com.primefilmes.logicas.CalculadoraDeTempo;
+import br.com.primefilmes.logicas.FiltroRecomendacao;
 import br.com.primefilmes.modelos.Filme;
 import br.com.primefilmes.modelos.Serie;
 
@@ -39,5 +40,10 @@ public class Principal {
         calculadora.somaTempoDeTitulo(lost);
         System.out.println("Os Títulos adicionados totalizam: " + calculadora.getTempoTotal() + " Minutos.");
         System.out.println("As aspas duplas ficam assim: \"\"");
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtraTitulo(lost);
+        filtro.filtraTitulo(meuFilme);
+        filtro.filtraTitulo(outroFilme);
     }
 }
