@@ -1,6 +1,6 @@
 package br.com.primefilmes.modelos;
 
-public class Serie extends Titulo {
+public class    Serie extends Titulo {
     private int temporadas;
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;

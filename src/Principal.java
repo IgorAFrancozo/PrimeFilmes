@@ -30,13 +30,14 @@ public class Principal {
         lost.setGenero("Fantasia");
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(22);
-        lost.setDuracaoEmMinutos(23);
+        lost.setDuracaoEmMinutos(2000);
         System.out.println("Duração da serie " + lost.getNome() + " é de: " + lost.getDuracaoEmMinutos() + " Minutos.");
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.inclui(meuFilme);
-        calculadora.inclui(outroFilme);
-        System.out.println("Os filmes " + meuFilme.getNome() + " e " + outroFilme.getNome() + " possuem " + calculadora.getTempoTotal() + " Minutos.");
-        System.out.println("As aspas duplas ficam assim: """);
+        calculadora.somaTempoDeTitulo(meuFilme);
+        calculadora.somaTempoDeTitulo(outroFilme);
+        calculadora.somaTempoDeTitulo(lost);
+        System.out.println("Os Títulos adicionados totalizam: " + calculadora.getTempoTotal() + " Minutos.");
+        System.out.println("As aspas duplas ficam assim: \"\"");
     }
 }
