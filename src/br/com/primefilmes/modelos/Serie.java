@@ -7,7 +7,6 @@ public class Serie extends Titulo implements Classificacao {
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
     private boolean ativa;
-    private int avaliacao;
 
     public int getTemporadas() {
         return temporadas;
@@ -43,10 +42,12 @@ public class Serie extends Titulo implements Classificacao {
 
     @Override
     public int getAvaliador() {
-        if (avaliacao >= 100) {
+        if (getTotalDeAvaliacoes() > 100) {
             return 4;
-        } else {
+        } else if (getTotalDeAvaliacoes() > 50) {
             return 2;
+        } else {
+            return 0;
         }
     }
 }

@@ -4,7 +4,6 @@ import br.com.primefilmes.logicas.Classificacao;
 
 public class Filme extends Titulo implements Classificacao {
     private String direcao;
-    private int avaliacoes;
 
     public String getDirecao() {
         return direcao;
@@ -16,10 +15,12 @@ public class Filme extends Titulo implements Classificacao {
 
     @Override
     public int getAvaliador() {
-        if (avaliacoes >= 100) {
+        if (getTotalDeAvaliacoes() > 100) {
             return 4;
-        } else {
+        } else if (getTotalDeAvaliacoes() > 50) {
             return 2;
+        } else {
+            return 0;
         }
     }
 }

@@ -8,7 +8,7 @@ public class Episodio implements Classificacao {
     private int totalAvaliacoes;
     private Serie serie;
 
-    public int getTotalAvaliacoes() {
+    public int getTotalDasAvaliacoes() {
         return totalAvaliacoes;
     }
 
@@ -42,10 +42,12 @@ public class Episodio implements Classificacao {
 
     @Override
     public int getAvaliador() {
-        if (totalAvaliacoes > 100) {
+        if (getTotalDasAvaliacoes() > 100) {
             return 4;
-        } else {
+        } else if (getTotalDasAvaliacoes() > 50){
             return 2;
+        }else {
+            return 0;
         }
     }
 }

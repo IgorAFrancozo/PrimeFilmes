@@ -16,7 +16,7 @@ public class CalculadoraDeTempo {
 //        this.tempoTotal += serie.getDuracaoEmMinutos();
 //    } refatorado para herdar do pai "Título" que aceita filme e série.
 
-    public void somaTempoDeTitulo(Titulo titulo){
+    public void somaTempoDeTitulo(Titulo titulo) {
         this.tempoTotal += titulo.getDuracaoEmMinutos();
     }
 }
