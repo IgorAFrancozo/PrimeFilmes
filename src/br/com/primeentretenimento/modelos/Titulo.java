@@ -1,4 +1,4 @@
-package br.com.primefilmes.modelos;
+package br.com.primeentretenimento.modelos;
 
 public class Titulo {
     private String nome;
@@ -84,11 +84,11 @@ public class Titulo {
     }
 
     public void exibeFichaTecnica() {
-        System.out.println("Nome do filme: " + nome);
+        System.out.println("Nome: " + nome);
         System.out.println("Gênero: " + genero);
         System.out.println("Descrição: " + descricao);
         System.out.println("Atores: " + atores);
-        System.out.println("Duração do Filme (min): " + duracaoEmMinutos);
+        System.out.println("Duração(min): " + duracaoEmMinutos);
         System.out.println("Nota: " + somaDasAvaliacoes);
         System.out.println("Número de Avaliações: " + totalDeAvaliacoes);
         System.out.println("Incluido no plano básico: " + incluidoNoPlano);

@@ -1,64 +1,33 @@
-import br.com.primefilmes.logicas.CalculadoraDeTempo;
-import br.com.primefilmes.logicas.FiltroRecomendacao;
-import br.com.primefilmes.modelos.Episodio;
-import br.com.primefilmes.modelos.Filme;
-import br.com.primefilmes.modelos.Serie;
+import br.com.primeentretenimento.modelos.*;
 
 public class Principal {
     public static void main(String[] args) {
+        Musica minhaMusica = new Musica();
+        minhaMusica.setTitulo("Love Gun");
+        minhaMusica.setCantor("Kiss");
 
-        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        for (int i = 0; i < 1000; i++) {
+            minhaMusica.reproduz();
+        }
 
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Top Igão");
-        meuFilme.setDescricao("Filmaço de ação!");
-        meuFilme.setGenero("Ação");
-        meuFilme.setDirecao("Tarantino");
-        meuFilme.setAtores("Tom Cruise");
-        meuFilme.setDuracaoEmMinutos(180);
-        meuFilme.setIncluidoNoPlano(true);
-        meuFilme.setTotalDeAvaliacoes(51);
-        meuFilme.exibeFichaTecnica();
+        for (int i = 0; i < 50; i++) {
+            minhaMusica.curte();
+        }
 
-        meuFilme.avalia(10);
+        Podcast meuPodcast = new Podcast();
+        meuPodcast.setTitulo("Bolha-Dev");
+        meuPodcast.setApresentador("Inguinho");
 
-        System.out.println("Média das avaliações: " + meuFilme.obterMediaDasAvaliacoes());
-        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
+        for (int i = 0; i < 5000; i++) {
+            meuPodcast.reproduz();
+        }
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Crepusculo");
-        outroFilme.setDuracaoEmMinutos(123);
-        outroFilme.setGenero("Brega");
-        outroFilme.setSomaDasAvaliacoes(0);
-        outroFilme.avalia(2);
+        for (int i = 0; i < 1000; i++) {
+            meuPodcast.curte();
+        }
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setGenero("Fantasia");
-        lost.setTemporadas(10);
-        lost.setEpisodiosPorTemporada(22);
-        lost.setDuracaoEmMinutos(2000);
-        System.out.println("Duração da serie " + lost.getNome() + " é de: " + lost.getDuracaoEmMinutos() + " Minutos.");
-
-        lost.avalia(9);
-
-        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.somaTempoDeTitulo(meuFilme);
-        calculadora.somaTempoDeTitulo(outroFilme);
-        calculadora.somaTempoDeTitulo(lost);
-        System.out.println("Os Títulos adicionados totalizam: " + calculadora.getTempoTotal() + " Minutos.");
-        System.out.println("As aspas duplas ficam assim: \"\"");
-
-        Episodio episodio = new Episodio();
-        episodio.setNumero(1);
-        episodio.setSerie(lost);
-        episodio.setTotalAvaliacoes(101);
-
-        System.out.println("Primeiro Filme: ");
-        filtro.filtraTitulo(meuFilme);
-        System.out.println("Segundo Filme: ");
-        filtro.filtraTitulo(outroFilme);
-        System.out.println("Terceiro Filme: ");
-        filtro.filtraTitulo(episodio);
+        MinhasPreferidas preferidas = new MinhasPreferidas();
+        preferidas.inclui(meuPodcast);
+        preferidas.inclui(minhaMusica);
     }
 }

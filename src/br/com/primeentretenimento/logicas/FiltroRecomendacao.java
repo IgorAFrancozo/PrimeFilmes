@@ -1,4 +1,4 @@
-package br.com.primefilmes.logicas;
+package br.com.primeentretenimento.logicas;
 
 public class FiltroRecomendacao {
     public void filtraTitulo(Classificacao classificacao) {

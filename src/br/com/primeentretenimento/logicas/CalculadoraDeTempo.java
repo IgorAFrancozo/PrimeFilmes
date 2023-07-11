@@ -1,6 +1,6 @@
-package br.com.primefilmes.logicas;
+package br.com.primeentretenimento.logicas;
 
-import br.com.primefilmes.modelos.Titulo;
+import br.com.primeentretenimento.modelos.Titulo;
 
 public class CalculadoraDeTempo {
     private int tempoTotal;

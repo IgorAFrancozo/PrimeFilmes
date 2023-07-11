@@ -1,6 +1,6 @@
-package br.com.primefilmes.modelos;
+package br.com.primeentretenimento.modelos;
 
-import br.com.primefilmes.logicas.Classificacao;
+import br.com.primeentretenimento.logicas.Classificacao;
 
 public class Filme extends Titulo implements Classificacao {
     private String direcao;

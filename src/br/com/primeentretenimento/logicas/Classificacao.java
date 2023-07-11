@@ -1,4 +1,4 @@
-package br.com.primefilmes.logicas;
+package br.com.primeentretenimento.logicas;
 
 public interface Classificacao {
     int getAvaliador();
