@@ -1,43 +1,33 @@
-import br.com.primefilmes.calculo.CalculadoraDeTempo;
-import br.com.primefilmes.modelos.Filme;
-import br.com.primefilmes.modelos.Serie;
+import br.com.primeentretenimento.modelos.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Top Igão");
-        meuFilme.setDescricao("Filmaço de ação!");
-        meuFilme.setGenero("Ação");
-        meuFilme.setDirecao("Tarantino");
-        meuFilme.setAtores("Tom Cruise");
-        meuFilme.setDuracaoEmMinutos(180);
-        meuFilme.setIncluidoNoPlano(true);
+        Musica minhaMusica = new Musica();
+        minhaMusica.setTitulo("Love Gun");
+        minhaMusica.setCantor("Kiss");
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(10);
-        meuFilme.avalia(7.5);
+        for (int i = 0; i < 1000; i++) {
+            minhaMusica.reproduz();
+        }
 
-        System.out.println(meuFilme.obterMediaDasAvaliacoes());
-        System.out.println("Total de avaliações: " + meuFilme.getTotalDasAvaliacoes());
+        for (int i = 0; i < 50; i++) {
+            minhaMusica.curte();
+        }
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("O Poderoso Chefão");
-        outroFilme.setDuracaoEmMinutos(123);
+        Podcast meuPodcast = new Podcast();
+        meuPodcast.setTitulo("Bolha-Dev");
+        meuPodcast.setApresentador("Inguinho");
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setGenero("Fantasia");
-        lost.setTemporadas(10);
-        lost.setEpisodiosPorTemporada(22);
-        lost.setDuracaoEmMinutos(2000);
-        System.out.println("Duração da serie " + lost.getNome() + " é de: " + lost.getDuracaoEmMinutos() + " Minutos.");
+        for (int i = 0; i < 5000; i++) {
+            meuPodcast.reproduz();
+        }
 
-        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.somaTempoDeTitulo(meuFilme);
-        calculadora.somaTempoDeTitulo(outroFilme);
-        calculadora.somaTempoDeTitulo(lost);
-        System.out.println("Os Títulos adicionados totalizam: " + calculadora.getTempoTotal() + " Minutos.");
-        System.out.println("As aspas duplas ficam assim: \"\"");
+        for (int i = 0; i < 1000; i++) {
+            meuPodcast.curte();
+        }
+
+        MinhasPreferidas preferidas = new MinhasPreferidas();
+        preferidas.inclui(meuPodcast);
+        preferidas.inclui(minhaMusica);
     }
 }
